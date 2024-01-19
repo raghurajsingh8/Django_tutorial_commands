@@ -93,5 +93,21 @@ ____________________________apne port pr server chalane ke liye___python manage.
 
 ___________________________________chapter 7_________install vs code __________________________
 done
-_____________________________________chapter 8 Python django structure---57.17-----------------------
+_____________________________________chapter 8 Python django structure--------------------------
+filewasdeleted
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x                                                                              x
+x                      deleted                                                 x 
+x                                                                              x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+------------------------------------------chapter 9 migrate to open admin---------------------------------
+__python manage.py migrate__ to sqlite vali file me kuch aa jayenga aur okokok krke 18 error solve kregaaur admin agar nhi khul rha h to khulega ab
+
+-----------------------------------chapter 10 install sqllite--------------------------
+install krke app ke sqlite ko kholenge to 11 tables aur 15 indices phle se hi honge
+-----------------------------------------chapter 11 create superuser--------------
+python manage.py createsuperuser
+ask many qyestion give it
+you can check in sqllite auth_user table 
 
