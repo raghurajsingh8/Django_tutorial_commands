@@ -243,7 +243,28 @@ index.html me
     </tr>
  {%  endfor %}
 </table>
-=============================================chapter 18 
+=============================================chapter 18 if....elif.....else===============
+ 
+task list bnayenge aur keval 5 ,7,11 13 ke devider ko jo 60 se bde h unko print krenge
+syntax:-
+if========================>
+{% if n>20 %}
+<div>{{n}}</div>
+{% endif %}
+
+if else=======================>
+
+{% if n > 20 %}             > is sign ke aas paaas space rhna jruri h 
+<div>{{n}}</div>
+{% else %}
+<div>{{n-2}}</div>
+{% endif %}
 
 
 
+list|length use for lengtn 
+html me {{_________content___________}}
+python me {%______content____________%}
+
+
+__________________static files_____chapter 19 **** using css js images in django _____________________
