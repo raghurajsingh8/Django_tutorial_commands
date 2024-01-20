@@ -110,4 +110,53 @@ install krke app ke sqlite ko kholenge to 11 tables aur 15 indices phle se hi ho
 python manage.py createsuperuser
 ask many qyestion give it
 you can check in sqllite auth_user table 
+________________________________chapter 12 URLS & VIEWS________________________________
+ /BLOG aise krke alag alag page khol skte h jo aapas me link rhete ha i 
+
+ urls.py me sare urls
+ view.py me saare view 
+
+ ye dono aapaas me jude hue honge 
+ ------------------------chapter 13 creating urks and views---------
+step 1===> main folder aone aap urls.py apne aap bne rhega  isi ka brother file create krenge 
+          main folder ke andar hi views.py
+step 2===>views.py me-------
+          from django.http import HttpResponse
+
+          def aboutus(request):
+              return HttpResponse("Welcome to my world")
+
+step 3===>urls.py me----------
+           from yourfoldername import  views 
+           urlpattern me ==>
+           path('aboutus/',views.aboutus)
+
+
+           **jo django home page khul rha th ashayad vo ab na khule**
+
+
+-------------------------------chapter 14 create dynamic url--------------------------
+
+page vhi rhtA CONTENT BADALTE RHTA HAI 
+
+DYNAMIC ROUTE KAISE BNAYENGE 
+ye 3 base per bn skta h
+int 
+str
+slug   hello-ws-tech    ,word + das
+
+task==> dynamic data pr page bdle,, yaani raj url likhe to raj aaye ,shalini likhe to shalini aaye aaye haaye,5 likhe to 5 aaye 4 likhe to 4 aaye
+
+
+urls.py==============>>>>>>>>>>>>>>>>>>>>>>
+   path('course/<int:courseid>',views.coursedetail)
+views.py============>>>>>>>>>>>>>>>>>>>>>
+def coursedetail(request,courseid):
+                  return HttpResponse(courseid)
+
+url inpt http://127.0.0.1:8000/course/9       output 9 
+for string
+   path('course/<str:courseid>',views.coursedetail)
+   url inpt http://127.0.0.1:8000/course/raj       output raj 
+
 
