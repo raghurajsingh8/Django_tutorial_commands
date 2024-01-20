@@ -203,9 +203,47 @@ key paass krenge
 
 -----------------------------------------chapter 17 loop in django--------------------
         
+data me list bnayenge aur use show krne ke liye loop use hoga 
+data={
+'list':['python','c++','java'],
+}
+index.html me
+
+{% for i in list  %}
+<div>{{forloop.counter}}{{i}}</div>
+{% endfor %}
+
+ 
+forloop.counter==>1 2 3 4 5 6 7 numbering krega
+forloop.counter0==> 0 1 ,0 se start krega 
+forloop.revcounter==>3 2 1
+forloop.revcounter0==>2 1 0
+forloop.first==>true false false fal.....
 
 
+========================show dictionalry =========================
+view.py me data={
 
+'student_details':[
+{'name':'pradeep','phone':'83170727289'},
+{'name':'raghv','phone':'94514623783473'}]
+
+}
+
+index.html me
+<table border="2">
+    <tr>
+ <th>name</th>
+ <th>phone</th>
+    </tr>
+    {%  for d in student_details  %}
+    <tr>
+      <td>{{d.name}}</td>
+    <td>{{d.phone}}</td>   =====>% nhi rhega 
+    </tr>
+ {%  endfor %}
+</table>
+=============================================chapter 18 
 
 
 
