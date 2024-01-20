@@ -143,6 +143,16 @@ DYNAMIC ROUTE KAISE BNAYENGE
 ye 3 base per bn skta h
 int 
 str
+
+
+
+
+
+
+
+
+
+
 slug   hello-ws-tech    ,word + das
 
 task==> dynamic data pr page bdle,, yaani raj url likhe to raj aaye ,shalini likhe to shalini aaye aaye haaye,5 likhe to 5 aaye 4 likhe to 4 aaye
@@ -164,5 +174,38 @@ same for slug
 path('course/<courseid>',views.coursedetail)
 
 
----------------------------------------------------------------------------chapter 15---------------------------------------------------------------------------------------
+-----------------------------------------chapter 15 Render a HTML template as response------
+step 1===>templates nama ke folder bnayenge
+step 2==>index.html bnayenge kuch likhenge
+step 3==>setting.py me directry set krenge
+ line 54          TEMPLATES me jayenge 'DIRS': [BASE_DIR,"templates"],
+
+ step 4==>views.py   from django.shortcuts import render
+step 5 views.py         def homepage(request):
+                        return render(request,"index.html") 
+step 6==>urls.py me     path('', views.homepage),
+
+to index html ka content shsow hoga home page pr
+
+----------------------------------------------chapter 16 passing data from a django view to Template-----------------
+__step1__
+views.py
+
+def homepage(request):
+data={
+'title':'Leaonths',
+'name':'raghuvraj'}
+        return render(request,"index.html",data)
+__step2__index.html me
+key paass krenge
+<title>{{title}}</title>
+<h3>{{name}}</h3>
+
+-----------------------------------------chapter 17 loop in django--------------------
+        
+
+
+
+
+
 
