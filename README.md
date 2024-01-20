@@ -158,5 +158,11 @@ url inpt http://127.0.0.1:8000/course/9       output 9
 for string
    path('course/<str:courseid>',views.coursedetail)
    url inpt http://127.0.0.1:8000/course/raj       output raj 
+same for slug
 
+   agar str int kuch define na kre to valid rhega teeno keliye
+path('course/<courseid>',views.coursedetail)
+
+
+---------------------------------------------------------------------------chapter 15---------------------------------------------------------------------------------------
 
