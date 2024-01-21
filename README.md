@@ -268,3 +268,37 @@ python me {%______content____________%}
 
 
 __________________static files_____chapter 19 **** using css js images in django _____________________
+task===>ek alag jagah css js image html likha h use django me laana
+
+step 1==>html vali saaari file templates me daaal denge 
+step 2==>baaaki ki saaari foldercopy krke static me paste krna hai
+step 3==>setting.py me static ki directry set krenge
+
+STATICFILES_DIRS =[
+BASE_DIR , "static",]
+
+localhost:8000/stsatic/css/main.css(file name)    to file ka code khul jayega 
+
+html files me jha csslink krayi gyi thi vha ab /static/ jod denge href me path ke liye
+
+agar navbar me index html se 4-5 file jude h phir bhi views,url me sb  me define krna hoga
+
+aur click krne pr page nhi khuega uppper url me hi likhna pdega
+
+ # path('aboutus/',views.aboutus),
+     path('contact',views.contact),
+    #  path('course/<int:courseid>',views.coursedetail),
+    #  path('course/<coursename>',views.coursedetailn)
+    path('shop',views.shop),
+    path('product',views.product),
+
+    contact/  shop/  product/ likhne me css call nhi ho rha static se 
+
+
+isliyw without slash likhenge
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++FINALLY STATIC  FILE KRNE AA GYA CSS JS ++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
