@@ -97,7 +97,7 @@ _____________________________________chapter 8 Python django structure----------
 filewasdeleted
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 x                                                                              x
-x                      deleted                                                 x 
+x                      deleted  x x x x x  x   x x x   xx x x x  x x           x 
 x                                                                              x
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -300,5 +300,77 @@ isliyw without slash likhenge
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++FINALLY STATIC  FILE KRNE AA GYA CSS JS ++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+__________________________chapter 20 Header & Footer__________________________
+
+header aur footer alag alag file bnayenge 
+
+{%  include "header.html %}
+{%  include "footer.html    %}
+
+agar page bnana h  to base.html header footer rhega aur beech ka content extends hote rgega
+
+==============================================================================================
+              chapter 21 EXTENDS 
+=============================================================================================
+base.html me.......header footer jod denge aur beech ka content badalte rhta hai 
+
+{%  include "header.html %}
+
+{% block content %}
+{% endblock %}
+
+{%  include "footer.html"    %}
+
+
+aur ab jo content chahiye us file me jaayenge 
+{% extends 'base.html' %}
+{% block content %}
+                 <html>
+                        //////    
+                  </html>
+
+{% endblock %}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+finally ek file rhegi header ,ek footer ,ek base
+base me header footer ko include kr lenge base me block content ka jagah rkhenge khali aur jis file ko run krna h usme base file ko extend krenge base ko aur block content me sb kuch likhenge 
+
+
+_______________Chapter 22 django url , nav bar click and work properly____________________
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>tarika 1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ <li><a href="/" class="active">Home</a></li>
+                      <li><a href="/shop">Our Shop</a></li>
+                      <li><a href="/product">Product Details</a></li>
+                      <li><a href="/contact">Contact Us</a></li>
+                      <li><a href="#">Sign In</a></li>
+
+
+aise likhenge href me
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.tarika 2<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+urls.py me jayenge 
+step 1 kuch name de denge 
+----------------------------path('aboutus',views.aboutus,name="about"),
+step 2
+url likhkar name paaas kr dena hai 
+href me ={% url 'about'  %}
+
+__________________________________________chapter 23 how to highlight active link in django______
+header vali file me 
+<li class="{% if request.path  =='/' %}  active{% endif %}">--------
+<li class="{% if request.path  =='/about' %}  active{% endif %}">....
+
+main.css me header .active a{
+
+css property
+}
+
+done
+
+
+______________________________________chapter24_____________________________________
+
 
 
