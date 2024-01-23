@@ -370,7 +370,10 @@ css property
 done
 
 
-______________________________________chapter24_____________________________________
+______________________________________chapter24______F__O__R___M _____________________________
+ THERE ARE FEW POPULAR METHODS GET AND POST
+1024 tk ka character bhej skte
+url ka data 
 
 
 
