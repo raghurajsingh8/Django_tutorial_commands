@@ -372,8 +372,103 @@ done
 
 ______________________________________chapter24______F__O__R___M _____________________________
  THERE ARE FEW POPULAR METHODS GET AND POST
-1024 tk ka character bhej skte
-url ka data 
+
+__________________________________GET METHOD___________________________________
+summary_---_-_-_-_---_url se data bhejta hai ?maek se separate rhta hai 
+  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+====>THE GET METHOD SENDS THE ENCODED USER INFORMATION APPENDED TO THE PAGE REQUEST .THE PAGE AND THe EENCODED INFORMATION ARE SEPARATED BY THE ?CHARACTER 
+
+====>https://www.youtube.com/watch?v=6tdfhlIoxOw&t=13198s    IS LINK ME BHI ? MARK HAI 
+
+====>RESTRICYED TO SEND UPTO 1024 CHARACTERS ONLY
+====>never use GET methodEigf you have Password or other sensitive information 
+====>Cannot be used to send binary data ,like images or word documents ,to the server
 
 
 
+
+   ____________________________POST method____________________________
+summary-_-_-_-_-payment ya sensitive information me use kr skte hai image vgera bhi bhej skte
+   
+====>The post method transfer information via http headers .the information is encoded as described in case of GET method .
+=====>does not have any restriction on data size to be sent.
+====>Can be used to send ASCII as well as binary data.
+====>The data send by POST method goes through HTTP header so security depends on HTTP protocol.
+====>By uhsing secure HTTP you can make sure that your information is secure.
+
+
+______________________________CHAPTER 25______________________________How to Implement Get method
+
+
+step 1===>jha saari html file h vhi ek new file bnayenge example____userform.html
+step 2===>views.py me connect k r lenge
+            def userForm(request):
+                return render(request,"userform.html")
+step 3====>urls.py me
+            path('userform',views.userForm),
+step 4 ====>create form in userform.html
+           
+
+ <form>
+    <div>
+        <label for="">value1</label>
+        <input type="text" name="num1">
+    </div>
+    <div>
+        <label for="">value2</label>
+        <input type="text" name="num2">
+    </div>
+    <div>
+         <button type="submit">Save</button>
+    </div>
+</form>
+
+
+
+button ka type submit hi rakhenge 
+aur name jrur rakhenge name se hi value ko get krenge  
+
+def userForm(request):
+    try:
+       n1=int(request.GET['num1'])
+       n2=int(request.GET['num2'])
+       print(n1+n2)
+      #      ye terminal me aayega
+    except:
+      pass
+          
+
+      return render(request,"userform.html")
+
+
+ n2=int(request.GET['num2'])    iska alternative ye hai 
+ n2=request.GET.get('num2')       int to keval string se convert krne liye lga h
+
+
+
+======================output kaise le ==============================
+bs variable declare krke output me return kra denge
+
+def userForm(request):
+    finalans=0
+    try:
+       n1=int(request.GET['num1'])
+       n2=int(request.GET['num2'])
+       finalans=n1+n2
+      #      ye terminal me aayega
+    except:
+      pass
+          
+
+    return render(request,"userform.html",{'output':finalans})
+
+    aur userform.html me call kr lenge
+
+  <div>
+        <label for="">output</label>
+        <input type="text" value="{{output}}">
+    </div>
+
+    demarit upper url pr saara data show krega aur vhi se output change kr skte hai
+___________________________________CHAPTER 26 POST METHOD________________________________
+    
