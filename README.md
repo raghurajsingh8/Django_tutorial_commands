@@ -472,3 +472,112 @@ def userForm(request):
     demarit upper url pr saara data show krega aur vhi se output change kr skte hai
 ___________________________________CHAPTER 26 POST METHOD________________________________
     
+CSRF token
+use for stopping CSRF
+
+agar form me method="post
+
+
+likhke previous code run kre to output me 
+CSRF verification failed. Request aborted.aayega
+userform.html me______________
+form method vali line ke neeche likhna hai 
+
+{% csrf_token  %}
+views.py  me_________________
+request.method=="POST" kr denge
+isme di gyi value upper url me show nhi hogi 
+
+
+_______________________________________________________views.py me
+to ye krne se save pr click krne se gayab nhi higa input use dictionary
+def userForm(request):
+    finalans=0
+    data={}
+    try:
+       if request.method=="POST":
+            n1=int(request.POST['num1'])
+            n2=int(request.POST['num2'])
+            finalans=n1+n2
+            data={
+                 "n1":n1,
+                 "n2":n2,
+                 "output":finalans
+
+            }
+      #  yournme=n1+n2
+      #      ye terminal me aayega
+    except:
+      pass
+          
+
+    return render(request,"userform.html",data)
+_______________________________________________________userform.html me
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="">value1</label>
+        <input type="text" name="num1" value="{{n2}}">
+    </div>
+    <div>
+        <label for="">value2</label>
+        <input type="text" name="num2" value="{{n1}}">
+    </div>
+  
+    <div>
+         <button type="submit">Save</button>
+    </div>
+    <div>
+        <label for="">output</label>
+        <input type="text" value="{{output}}">
+    </div> 
+  
+</form>
+
+
+_______________________chapter___27__ HOW to redirect Page in Django___________________
+  save krne pr next page me jaise login kiye to home page pr gye  
+
+    step1 ==>views.py me    HttpResponseRedirect likhenge first line me jha import krte hai 
+    step2==>   n1=int(request.POST['num1'])
+               n2=int(request.POST['num2'])
+              finalans=n1+n2
+              data={
+                     "n1":n1,
+                 "n2":n2,
+                   "output":finalans}
+              return HttpResponseRedirect('/contact')
+
+              save p rclick krne ke baad hm phuch jaaaayenge 
+
+
+
+
+
+agar output bhi le jaaana hai to 
+
+contact.html me
+                    hello {{output}} hi
+
+views.py me
+                         data={
+                 "n1":n1,
+                 "n2":n2,
+                 "output":finalans
+
+            }
+            url="/contact?output={}".format(finalans)
+            return HttpResponseRedirect(url)
+      #  yournme=n1+n2
+-------------upper ke side 
+      
+def contact(request):
+    
+       output=request.GET.get('output')
+
+       return render(request,"contact.html",{'output':output})
+---------------------------------------------------------------------------------------
+ab tak saara done 
+----------------------------------------------------------------------------------------
+__________________________________chapter 28 HTML FORM ACTION URL IN DJANGO____________
+
