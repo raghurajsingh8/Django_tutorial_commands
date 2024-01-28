@@ -581,3 +581,100 @@ ab tak saara done
 ----------------------------------------------------------------------------------------
 __________________________________chapter 28 HTML FORM ACTION URL IN DJANGO____________
 
+userform.html me 
+<form method="POST"  action="{% url 'submitform' %}">
+views.py me
+def submitform(request):
+    
+    try:
+       if request.method=="POST":
+            n1=int(request.POST['num1'])
+            n2=int(request.POST['num2'])
+            finalans=n1+n2
+            data={
+                 "n1":n1,
+                 "n2":n2,
+                 "output":finalans
+
+            }
+            url="/contact?output={}".format(finalans)
+            return HttpResponseRedirect(url)
+      #  yournme=n1+n2
+      #      ye terminal me aayega
+    except:
+      pass
+urls.py me
+    path('submitform/',views.submitform,name="submitform"),
+
+
+    action lgane pr data ek page pr jaata h aur dusre page pr redirect ho jaaata hai
+
+
+
+
+
+
+===========================Chapter 29 Working with Django Forms===============
+
+jha saari file hai urls.py views.py vha ek file bnyenge forms.py
+from django import forms
+class usersForm(forms.Form):
+    num1=forms.CharField(label="firs name",required=True)
+    num2=forms.CharField(label="middle name",required=False)
+    num3=forms.CharField(label="last name")
+    email=forms.EmailField()
+
+views.py me 
+from .forms import usersForm
+
+      def userForm(request):
+      finalans=0
+    fn=usersForm()
+    data={'form':fn}
+    try:
+            n1=(request.POST['num1'])
+            n2=(request.POST['num2'])
+            n3=request.POST['num3']
+            finalans=n1+n2
+            data={'form':fn,
+                 
+            
+                 "output":finalans
+
+            }
+            url="/contact?output={}".format(finalans)
+            return HttpResponseRedirect(url)
+      #  yournme=n1+n2
+      #      ye terminal me aayega
+    except:
+      pass
+          
+
+    return render(request,"userform.html",data)
+
+
+    userform.html
+    <form method="POST"  >
+     {% csrf_token %} 
+     {{form}}
+    {% comment %} <div>
+        <label for="">value1</label>
+        <input type="text" name="num1" value="{{n2}}">
+    </div>
+    <div>
+        <label for="">value2</label>
+        <input type="text" name="num2" value="{{n1}}">
+    </div> {% endcomment %}
+  
+    <div>
+         <button type="submit">Save</button>
+    </div>
+    <div>
+        <label for="">output</label>
+        <input type="text" value="{{output}}">
+    </div> 
+  
+</form>
+
+==================================chapter 30 calculater==============================
+          
