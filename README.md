@@ -709,4 +709,6 @@ views.py
    sara chij aise hi krenege
    bs views.py me do output aise bhejte hai 
     return render(request,"marksheet.html",{'c':c,'p':p})
+
+=====================================================vhapter 33 form validation===============
           
