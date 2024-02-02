@@ -677,4 +677,36 @@ from .forms import usersForm
 </form>
 
 ==================================chapter 30 calculater==============================
+
+==================================chapter 31 odd even===============================
+saveevenodd.html file me
+ <form method="POST">
+    {%csrf_token %}
+    <label>value 1</label>
+    <input type="text" name="num1" />
+    <button type="submit">EVEN | ODD </button><br/>
+    <label>Output</label>
+    <input type="text" value={{c}}>
+ </form>
+
+
+ urls.py
+        path('saveevenodd/',views.saveevenodd),
+
+views.py 
+       def saveevenodd(request):
+    c=''
+    if request.method=="POST":
+      r=int(request.POST.get('num1'))
+
+      if r%2==0:
+          c="even number"
+      else:
+          c="odd number"
+    return render(request,"evenodd.html",{'c':c})
+
+====================================================Chapter 32 marksheet=====================
+   sara chij aise hi krenege
+   bs views.py me do output aise bhejte hai 
+    return render(request,"marksheet.html",{'c':c,'p':p})
           
