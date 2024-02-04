@@ -710,5 +710,43 @@ views.py
    bs views.py me do output aise bhejte hai 
     return render(request,"marksheet.html",{'c':c,'p':p})
 
-=====================================================vhapter 33 form validation===============
-          
+=====================================================chapter 33 form validation===============
+         agar value put nhi krenega aur submit  krenge to error aayega 
+
+         validation krne pr alert jise hm design krenege error aayega
+
+    <form method="POST">
+   {% if error %}
+
+   <div style="background:pink;color:white;">
+      Please eneter the value
+    </div> 
+   {% endif %}
+
+    {%csrf_token %}
+    <label>value 1</label>
+    <input type="text" name="num1" />
+    <button type="submit">EVEN | ODD </button><br/>
+    <label>Output</label>
+    <input type="text" value={{c}}>
+
+    
+ </form>     
+
+
+
+
+  if request.method=="POST":
+      if request.POST.get('num1')=="":
+               return render(request,"evenodd.html",{'error':True})
+-----
+
+
+===============================chapter 34 models ==================================
+
+
+         python manage.py startapp service
+
+         run kreneg to ek service aam ka appp bmnjayenga 
+
+=====================chapter 35models=========================================
